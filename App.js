@@ -9,6 +9,7 @@ import HomeScreen from './HomeScreen';
 import LoginScreen from './LoginScreen';
 import Blood from './Blood';
 import City from './City';
+import DadosUsuario from './DadosUsuario';
 
 
 //import MultipleCheckBox from './MultipleCheckBox';
@@ -26,11 +27,12 @@ export default function App() {
       <Stack.Navigator>
 
         
-        <Stack.Screen name = "LoginScreen" component={LoginScreen} />
+        <Stack.Screen name = "Tela de Login" component={LoginScreen} />
         <Stack.Screen name = "Home" component={HomeScreen} />
         <Stack.Screen name = "Blood" component={Blood} />
         <Stack.Screen name = "City" component={City} />
         <Stack.Screen name = "Data" component={Data} />
+        <Stack.Screen name = "DadosUsuario" component={DadosUsuario}/>
         
 
       </Stack.Navigator>

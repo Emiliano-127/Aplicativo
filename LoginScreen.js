@@ -2,6 +2,7 @@ import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} fro
 import {initializeApp} from 'firebase/app';
 import { firebaseConfig } from './firebase-config';
 import { useNavigation } from '@react-navigation/native';
+import { Image } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 
@@ -51,11 +52,15 @@ export default function LoginScreen(){
     return(
         <View style={styles.container}>
 
-            <Text style={styles.texto}>Olá, seja bem-vindo!</Text>
+        <Image 
+          style={styles.image}
+          source={require('./assets/men.jpg')}/>
+
+           
 
             <TextInput 
                 onChangeText={(text) => setEmail(text)}
-                style ={{height: 30, width: '80%', borderColor: '#8B0000', borderBottomWidth: 3, margin:50}}
+                style ={{height: 30, width: '80%', borderColor: '#8B4513', borderBottomWidth: 3, margin:50}}
                 placeholder="Email" 
                 
             />
@@ -63,8 +68,9 @@ export default function LoginScreen(){
             <TextInput 
 
                 onChangeText={(text)=>setPassword(text)}
-                style ={{height: 30, width: '80%', borderColor: '#8B0000', borderBottomWidth: 3, margin: 50}}
+                style ={{height: 30, width: '80%', borderColor: '#8B4513', borderBottomWidth: 3, margin: 50}}
                 placeholder="Senha" 
+                secureTextEntry={true}
                 
             />
 
@@ -79,7 +85,6 @@ export default function LoginScreen(){
                 <Text style={styles.textoo}>Criar Conta</Text>
             </TouchableOpacity>
 
-         
 
             
         </View>
@@ -90,20 +95,18 @@ export default function LoginScreen(){
 const styles = StyleSheet.create({
     container: {
 
-        flex: 0.9,
+        flex: 1.0,
         justifyContent: 'center',
         alignItems: 'center',
         width: '90%',
         margin: 20,
-        height: 5,
+        height: 0.5,
         backgroundColor: '#fff',
         borderRadius: 30,
-        borderColor: 'gray',
-        borderWidth: 1,
+        borderColor: '#8B4513',
+        borderWidth: 3,
         
     },
-
-    
 
     texto:{
         margin: 20,
@@ -118,7 +121,7 @@ const styles = StyleSheet.create({
     },
 
     button:{
-        backgroundColor: '#8B0000',
+        backgroundColor: '#8B4513',
         padding: 15,
         margin: 15,
         height: 50,
@@ -126,7 +129,12 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems:'center'
         
-    }
+    },
+    image:{
+        flex: 1,
+        width: '60%',
+        height:'60%',
+      },
+ 
 
-  
 });
